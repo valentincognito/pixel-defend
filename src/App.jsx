@@ -1,9 +1,18 @@
-function App() {
+import { Route, Routes } from 'react-router-dom'
+import { Suspense } from 'react'
+
+import Home from './pages/Home'
+
+import './index.css'
+
+const App = () => {
   return (
     <>
-      <h1 className="text-3xl font-bold">
-        Hello tailwind!
-      </h1>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Suspense>
     </>
   )
 }
