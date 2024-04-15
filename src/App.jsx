@@ -10,7 +10,7 @@ const App = () => {
     <>
       <Suspense fallback={null}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home page="home" />} />
         </Routes>
       </Suspense>
     </>

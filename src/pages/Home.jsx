@@ -1,8 +1,18 @@
+import { useEffect } from 'react'
 
-export default function Home() {
+import Webgl from '../components/Webgl'
+import useAppStore from '../stores/useAppStore'
+
+export default function Home({ page }) {
+  const setGlobalState = useAppStore(state => state.setGlobalState)
+
+  useEffect(() => {
+    setGlobalState(page)
+  }, [page])
+
   return (
     <>
-      <h1>home page</h1>
+      <Webgl />
     </>
   )
 }
